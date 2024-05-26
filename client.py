@@ -12,6 +12,7 @@ class tcpclient():
                 #client socket create
                 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 client_socket.connect((host, port))
+                print(f"[*] socket connected {host}:{port}")
                 #set to receive message from server to threading
                 server_receiver = threading.Thread(target=self.receive_chat, args=(client_socket,))
                 server_receiver.start()
